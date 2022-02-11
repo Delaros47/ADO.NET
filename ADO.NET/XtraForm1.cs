@@ -17,5 +17,12 @@ namespace ADO.NET
         {
             InitializeComponent();
         }
+
+        ProductDal _productDal = new ProductDal();
+
+        private void XtraForm1_Load(object sender, EventArgs e)
+        {
+            gcProducts.DataSource = _productDal.GetAll();
+        }
     }
 }
