@@ -22,7 +22,23 @@ namespace ADO.NET
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
+            ListProducts();
+        }
+
+        private void ListProducts()
+        {
             gcProducts.DataSource = _productDal.GetAll();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _productDal.Add(new Product
+            {
+                ProductName = tbxProductName.Text,
+                StockAmount = Convert.ToInt32(tbxStockAmount.Text),
+                UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
+            });
+            ListProducts();
         }
     }
 }

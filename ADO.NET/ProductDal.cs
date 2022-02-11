@@ -67,5 +67,20 @@ namespace ADO.NET
             command.ExecuteNonQuery();
             _connection.Close();
         }
+
+        public void Update(Product product)
+        {
+            ConnectionControl();
+            SqlCommand command = new SqlCommand("UPDATE Products SET ProductName=@ProductName,UnitPrice=@UnitPrice,StockAmount=@StockAmount WHERE ProductId=@ProductId",_connection);
+            command.Parameters.AddWithValue("@ProductName", product.ProductName);
+            command.Parameters.AddWithValue("@StockAmount", product.StockAmount);
+            command.Parameters.AddWithValue("@UnitPrice", product.UnitPrice);
+            command.Parameters.AddWithValue("@ProductId", product.ProductId);
+            command.ExecuteNonQuery();
+            _connection.Close();
+
+        }
+
+
     }
 }

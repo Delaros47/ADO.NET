@@ -34,18 +34,18 @@
             this.lblProductName = new DevExpress.XtraEditors.LabelControl();
             this.tbxProductName = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.lblUnitPrice = new DevExpress.XtraEditors.LabelControl();
-            this.tbxUnitPrice = new DevExpress.XtraEditors.TextEdit();
-            this.lblStockAmount = new DevExpress.XtraEditors.LabelControl();
-            this.tbxStockAmount = new DevExpress.XtraEditors.TextEdit();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.tbxStockAmount = new DevExpress.XtraEditors.TextEdit();
+            this.lblStockAmount = new DevExpress.XtraEditors.LabelControl();
+            this.tbxUnitPrice = new DevExpress.XtraEditors.TextEdit();
+            this.lblUnitPrice = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxUnitPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxStockAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxUnitPrice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gcProducts
@@ -75,7 +75,7 @@
             // 
             // tbxProductName
             // 
-            this.tbxProductName.Location = new System.Drawing.Point(91, 33);
+            this.tbxProductName.Location = new System.Drawing.Point(107, 33);
             this.tbxProductName.Name = "tbxProductName";
             this.tbxProductName.Properties.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tbxProductName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -100,38 +100,19 @@
             this.panelControl1.Size = new System.Drawing.Size(361, 218);
             this.panelControl1.TabIndex = 3;
             // 
-            // lblUnitPrice
+            // btnAdd
             // 
-            this.lblUnitPrice.Location = new System.Drawing.Point(13, 78);
-            this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(49, 13);
-            this.lblUnitPrice.TabIndex = 1;
-            this.lblUnitPrice.Text = "Unit Price:";
-            // 
-            // tbxUnitPrice
-            // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(91, 75);
-            this.tbxUnitPrice.Name = "tbxUnitPrice";
-            this.tbxUnitPrice.Properties.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.tbxUnitPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tbxUnitPrice.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.tbxUnitPrice.Properties.Appearance.Options.UseBackColor = true;
-            this.tbxUnitPrice.Properties.Appearance.Options.UseFont = true;
-            this.tbxUnitPrice.Properties.Appearance.Options.UseForeColor = true;
-            this.tbxUnitPrice.Size = new System.Drawing.Size(197, 22);
-            this.tbxUnitPrice.TabIndex = 2;
-            // 
-            // lblStockAmount
-            // 
-            this.lblStockAmount.Location = new System.Drawing.Point(13, 116);
-            this.lblStockAmount.Name = "lblStockAmount";
-            this.lblStockAmount.Size = new System.Drawing.Size(70, 13);
-            this.lblStockAmount.TabIndex = 1;
-            this.lblStockAmount.Text = "Stock Amount:";
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(169, 151);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(84, 38);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tbxStockAmount
             // 
-            this.tbxStockAmount.Location = new System.Drawing.Point(91, 113);
+            this.tbxStockAmount.Location = new System.Drawing.Point(107, 113);
             this.tbxStockAmount.Name = "tbxStockAmount";
             this.tbxStockAmount.Properties.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tbxStockAmount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -142,14 +123,34 @@
             this.tbxStockAmount.Size = new System.Drawing.Size(197, 22);
             this.tbxStockAmount.TabIndex = 2;
             // 
-            // btnAdd
+            // lblStockAmount
             // 
-            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(144, 150);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 38);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
+            this.lblStockAmount.Location = new System.Drawing.Point(13, 116);
+            this.lblStockAmount.Name = "lblStockAmount";
+            this.lblStockAmount.Size = new System.Drawing.Size(70, 13);
+            this.lblStockAmount.TabIndex = 1;
+            this.lblStockAmount.Text = "Stock Amount:";
+            // 
+            // tbxUnitPrice
+            // 
+            this.tbxUnitPrice.Location = new System.Drawing.Point(107, 75);
+            this.tbxUnitPrice.Name = "tbxUnitPrice";
+            this.tbxUnitPrice.Properties.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.tbxUnitPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tbxUnitPrice.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.tbxUnitPrice.Properties.Appearance.Options.UseBackColor = true;
+            this.tbxUnitPrice.Properties.Appearance.Options.UseFont = true;
+            this.tbxUnitPrice.Properties.Appearance.Options.UseForeColor = true;
+            this.tbxUnitPrice.Size = new System.Drawing.Size(197, 22);
+            this.tbxUnitPrice.TabIndex = 2;
+            // 
+            // lblUnitPrice
+            // 
+            this.lblUnitPrice.Location = new System.Drawing.Point(13, 78);
+            this.lblUnitPrice.Name = "lblUnitPrice";
+            this.lblUnitPrice.Size = new System.Drawing.Size(49, 13);
+            this.lblUnitPrice.TabIndex = 1;
+            this.lblUnitPrice.Text = "Unit Price:";
             // 
             // XtraForm1
             // 
@@ -167,8 +168,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbxUnitPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxStockAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbxUnitPrice.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
