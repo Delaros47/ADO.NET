@@ -59,5 +59,12 @@ namespace ADO.NET
             tbxUpdateStockAmount.Text = gvProducts.GetFocusedRowCellValue("StockAmount").ToString();
             tbxUpdateUnitPrice.Text = gvProducts.GetFocusedRowCellValue("UnitPrice").ToString();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(gvProducts.GetFocusedRowCellValue("ProductId"));
+            _productDal.Delete(id);
+            ListProducts();
+        }
     }
 }

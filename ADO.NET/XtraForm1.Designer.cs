@@ -47,6 +47,7 @@
             this.lblUpdateUnitPrice = new DevExpress.XtraEditors.LabelControl();
             this.tbxUpdateProductName = new DevExpress.XtraEditors.TextEdit();
             this.lblUpdateProductName = new DevExpress.XtraEditors.LabelControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbxProductName.Properties)).BeginInit();
@@ -168,6 +169,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnDelete);
             this.panelControl2.Controls.Add(this.btnUpdate);
             this.panelControl2.Controls.Add(this.tbxUpdateStockAmount);
             this.panelControl2.Controls.Add(this.lblUpdateStockAmount);
@@ -182,8 +184,8 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnUpdate.Location = new System.Drawing.Point(169, 151);
+            this.btnUpdate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage1")));
+            this.btnUpdate.Location = new System.Drawing.Point(220, 151);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 38);
             this.btnUpdate.TabIndex = 3;
@@ -253,6 +255,16 @@
             this.lblUpdateProductName.TabIndex = 1;
             this.lblUpdateProductName.Text = "Product Name:";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnDelete.Location = new System.Drawing.Point(120, 151);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(84, 38);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // XtraForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +314,6 @@
         private DevExpress.XtraEditors.LabelControl lblUpdateUnitPrice;
         private DevExpress.XtraEditors.TextEdit tbxUpdateProductName;
         private DevExpress.XtraEditors.LabelControl lblUpdateProductName;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
     }
 }
