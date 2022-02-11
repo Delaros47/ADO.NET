@@ -40,5 +40,24 @@ namespace ADO.NET
             });
             ListProducts();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            _productDal.Update(new Product
+            {
+                ProductId = Convert.ToInt32(gvProducts.GetFocusedRowCellValue("ProductId")),
+                ProductName = tbxUpdateProductName.Text,
+                StockAmount = Convert.ToInt32(tbxUpdateStockAmount.Text),
+                UnitPrice = Convert.ToDecimal(tbxUpdateUnitPrice.Text),
+            });
+            ListProducts();
+        }
+
+        private void gvProducts_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            tbxUpdateProductName.Text = gvProducts.GetFocusedRowCellValue("ProductName").ToString();
+            tbxUpdateStockAmount.Text = gvProducts.GetFocusedRowCellValue("StockAmount").ToString();
+            tbxUpdateUnitPrice.Text = gvProducts.GetFocusedRowCellValue("UnitPrice").ToString();
+        }
     }
 }

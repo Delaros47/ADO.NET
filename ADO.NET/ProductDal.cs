@@ -81,6 +81,15 @@ namespace ADO.NET
 
         }
 
+        public void Delete(int id)
+        {
+            ConnectionControl();
+            SqlCommand command = new SqlCommand("DELETE FROM Products WHERE ProductId=@ProductId",_connection);
+            command.Parameters.AddWithValue("@ProductId",id);
+            command.ExecuteNonQuery();
+            _connection.Close();
+
+        }
 
     }
 }

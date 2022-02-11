@@ -41,5 +41,31 @@ namespace ADO.NET
             MessageBox.Show("Product has successfully added...");
             ListProducts();
         }
+
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbxUpdateProductName.Text = dgvProducts.CurrentRow.Cells["ProductName"].Value.ToString();
+            tbxUpdateStockAmount.Text = dgvProducts.CurrentRow.Cells["StockAmount"].Value.ToString();
+            tbxUpdateUnitPrice.Text = dgvProducts.CurrentRow.Cells["UnitPrice"].Value.ToString();
+        }
+
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            _productDal.Update(new Product
+            {
+                ProductId = Convert.ToInt32( dgvProducts.CurrentRow.Cells["ProductId"].Value),
+                ProductName = tbxProductName.Text,
+                StockAmount = Convert.ToInt32(tbxUpdateStockAmount.Text),
+                UnitPrice = Convert.ToDecimal(tbxUpdateUnitPrice.Text),
+            });
+            ListProducts();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvProducts.CurrentRow.Cells["ProductId"].Value);
+            _productDal.Delete(id);
+            ListProducts();
+        }
     }
 }
